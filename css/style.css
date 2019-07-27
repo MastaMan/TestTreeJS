@@ -22,6 +22,11 @@ h1 {
     text-align: center;
 }
 
+.overview {
+    text-align: left;
+    display: inline-block;    
+}
+
 #wrapper {
     width: 100%;
     display: flex;
@@ -67,7 +72,8 @@ h1 {
 }
 
 #tree li li:first-child:before {
-  left: 46px;
+  left: 50%;
+  width: 50%;
 }
 
 #tree li li:last-child:before {

@@ -4,6 +4,9 @@
     v1.1.0:
         - Removed: Tree.branching now return dom element (Refactoring)
         + Added: Now you can remove nodes by clicking
+    
+    v1.2.0
+        Added: Now you can randomly add nodes
 */
 
 // Get TreeAPI data
@@ -17,12 +20,13 @@ class Tree {
     constructor(data, eid) {
         self = this;
         this.data = data;
-        let root = this.branching();
+        this.root = this.branching();
         let el = document.getElementById(eid);
         if(el) {
-            el.appendChild(root);
+            this.clear(el);
+            el.appendChild(this.root);
 
-            root.addEventListener('click', function(event) {
+            this.root.addEventListener('click', function(event) {
                 let target = event.target;
                 
                 if(target.tagName == 'SPAN') {
@@ -35,6 +39,12 @@ class Tree {
                     }
                 }                               
             }, false);      
+        }
+    }
+
+    clear(el) {
+        while (el.firstChild) {
+            el.removeChild(el.firstChild);
         }
     }
 
@@ -90,8 +100,22 @@ class Tree {
 promise.then(
     result => {        
         let tree = new Tree(result.data, 'tree');
+        data = result.data;
     },
     error => {
         alert('Something went wrong!');
     }
 );
+
+function rnd(min, max) {
+    return Math.floor(Math.random() * (max - min) ) + min;
+  }
+
+  function randomAdd() {
+    let cnt = data.length;
+    let num = rnd(2, cnt);
+    let i = data[num];
+    data.push({'id': cnt, 'parent': i.id});
+      
+    let tree = new Tree(data, 'tree');
+}
