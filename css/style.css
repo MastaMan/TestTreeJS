@@ -18,6 +18,10 @@ h1 {
     color: #5A5A5A;
 }
 
+.text-center {
+    text-align: center;
+}
+
 #wrapper {
     width: 100%;
     display: flex;
@@ -90,6 +94,7 @@ h1 {
     line-height: 60px;
     border-radius: 10%;
     box-sizing: border-box;
+    cursor: pointer;
 }
 
 #tree li li span:before,
