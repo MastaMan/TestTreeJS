@@ -1,0 +1,114 @@
+/* App stylesheet by Vasyl Lukianeko */
+
+body, body {
+    background-color: #FFF;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #000;
+}
+
+h1 {
+    font-family: sans-serif;
+    text-align: center;
+    color: #5A5A5A;
+}
+
+#wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;    
+}
+
+#tree ul {
+    display: inline-flex;    
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#tree li ul {
+    margin: 27px 0;
+}
+
+#tree ul > * {
+    box-sizing: border-box;
+    margin: 0;    
+    padding: 0;    
+}
+
+#tree li {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+    padding: 0 12px;
+    list-style: none;
+}
+
+#tree li li:before {
+    position: absolute;
+    border-top: 1px solid #5A5A5A;
+    content: "";
+    display: block;
+    height: 1px;
+    width: 100%;
+    top: -13px;
+}
+
+#tree li li:first-child:before {
+  left: 46px;
+}
+
+#tree li li:last-child:before {
+    right: 50%;
+    width: 50%;
+}
+
+#tree li li:first-child:last-child:before {
+    display: none;
+}
+
+#tree li li:first-child:last-child {
+    padding: 0;
+}
+
+#tree li span {
+    border: 1px solid #5A5A5A;
+    height: 60px;
+    width: 69px;
+    position: relative;
+    text-align: center;
+    color: #000;
+    background-color: #1898FD;
+    line-height: 60px;
+    border-radius: 10%;
+    box-sizing: border-box;
+}
+
+#tree li li span:before,
+#tree li span:after {
+    position: absolute;
+    border-left: 1px solid #5A5A5A;
+    content: "";
+    display: block;
+    width: 1px;
+    height: 14px;
+    left: 33px;
+    top: -14px;
+}
+
+#tree li span:after {
+    bottom: -15px;
+    top: auto;
+}
+
+#tree li span:first-child:last-child:after {
+    display: none;
+}
